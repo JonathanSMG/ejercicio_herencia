@@ -1,18 +1,32 @@
-﻿
-namespace ejercicio_manana.Program
+﻿using System;
+
+
+namespace EjerciciosAnimales
 {
-    class Program
-    {
-        public static void Main(string[] args)
+     class Program{
+
+        public static void Main(String[] args)
         {
-            Empleados empleados = new Empleados("Bar de comida", 2022, "Pepe", "Aguilar", 1, "Soltero");
-            empleados.imprimir();
-            Estudiantes estudiante = new Estudiantes("A340", "Pablo", "Espinalezs", 2, "Soltero");
-            estudiante.imprimir();
-            Personal personal = new Personal("Secretaria", "Diana", "Lopez", 3, "Casada");
-            personal.imprimir();
-            Profesores profesores = new Profesores("Arquitectura", "Joaquin", "Gonzales", 3, "viudo");
-            profesores.imprimir();
+            iAve condor = new Condor("rosquita", "Blanco");
+            iAve gallina = new Gallina("piolin", "Amarrillo");
+            iAve pato = new Pato("tanjito", "negro");
+            iAve pinguin = new Pinguino("pecas", "blanco_negro");
+
+            List<iAve> animales_lista = new List<iAve>();
+            animales_lista.Add(condor);
+            animales_lista.Add(gallina);
+            animales_lista.Add(pato);
+            animales_lista.Add(pinguin);
+
+            foreach(iAve ave in animales_lista)
+            {
+                ave.imprimir_datos();
+                ave.nadar_animal();
+                ave.volar_animal();
+            }
+            
+           
         }
+
     }
-    }
+}
